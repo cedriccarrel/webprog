@@ -1,6 +1,6 @@
 # Projekt: NBA Stats 
 ## Ausgangslage / Problemstellung
-
+Testing
 
 ## Projektidee
 
@@ -13,5 +13,3 @@
 5. Siehe Funktionen und Flowchart für Userjourney
 
 ## Funktionen
-
-"# webprog" 

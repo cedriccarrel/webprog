@@ -6,8 +6,7 @@
 
 Ihre Beschreibung sollte auch die Links auf die Datenquelle beinhalten, die Sie verwenden möchten. 
 
-Wir möchten eine Webseite bauen, welche akutelle NBA-Daten visualisiert.
-
+Wir sind vier sportbegeisterte Personen und unsere Idee besteht darin, eine Webseite zu erstellen auf der wir Daten der National Basketball Association (NBA) visualisieren. Wir werden auf Daten von einzelnen Spielern und Teams der letzten fünf Saisons zurückgreifen. Dadurch bleibt die zu bearbeitende Datenmenge überschaubar. Um die Darstellung der Daten interessant zu gestalten, werden wir verschiedene Ansichten und Filter einbauen, damit eine Interaktion zwischen dem Benutzer und den Daten entstehen kann.
 
 
 ## Aufbau der Seite

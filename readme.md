@@ -13,7 +13,7 @@ Wir sind vier sportbegeisterte Personen und unsere Idee besteht darin, eine Webs
 Die Webseite umfasst eine Page, auf welcher interaktiv unterschiedliche Diagrammtypen erzeugt werden können.
 Die Art des Diagramms ist jeweils abhängig vom gewünschten Content - Änderungen sind hier vorbehalten.
 
-![Mockup](./mockup.jpg)
+![Mockup](./Mockup.jpg)
 
 ## Daten
 Entweder wird eine API-Schnittstelle gebaut, welche die aktuellen Daten von der Homepage www.nba.com holt.

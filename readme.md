@@ -6,7 +6,7 @@
 
 Ihre Beschreibung sollte auch die Links auf die Datenquelle beinhalten, die Sie verwenden möchten. 
 
-Wir sind vier sportbegeisterte Personen und unsere Idee besteht darin, eine Webseite zu erstellen auf der wir Daten der National Basketball Association (NBA) visualisieren. Wir werden auf Daten von einzelnen Spielern und Teams der letzten fünf Saisons zurückgreifen. Dadurch bleibt die zu bearbeitende Datenmenge überschaubar. Um die Darstellung der Daten interessant zu gestalten, werden wir verschiedene Ansichten und Filter einbauen, damit eine Interaktion zwischen dem Benutzer und den Daten entstehen kann.
+Wir sind vier sportbegeisterte Personen und unsere Idee besteht darin, eine Webseite zu erstellen auf der wir Daten der National Basketball Association (NBA) visualisieren. Wir werden auf Daten von einzelnen Spielern und Teams der letzten fünf Seasons zurückgreifen. Dadurch bleibt die zu bearbeitende Datenmenge überschaubar. Um die Darstellung der Daten interessant zu gestalten, werden wir verschiedene Ansichten und Filter einbauen, damit eine Interaktion zwischen dem Benutzer und den Daten entstehen kann.
 
 
 ## Aufbau der Seite
@@ -29,7 +29,22 @@ Oder es wird über diese Datenbasis gearbeitet:
 Da die Datenmenge 10 MB überschritten würde, werden nur die letzten 5 Seasons ausgewertet.
 
 ## Funktionen / Sichten
-- Overall Season Stats Players (Top 5: Points, Rebounds, Assists, Blocks Steals, Turnovers, Three Pointers)
-- Overall Season Stats Teams (Top 5: Points, Rebounds, Assists, Blocks Steals, Turnovers, Three Pointers)
-- Alltime Stats (Top 5: Points, Rebounds, Assists, Blocks Steals, Turnovers, Three Pointers)
-- Spieler Vergleich
+Dem Benutzer werden durch verschiedene Filterfunktionen die jeweils relevante Datenansicht präsentiert. Der Benutzer hat folgende Möglichkeiten:
+
+Seasons
+- Eine spezifische Season
+- Alle letzten fünf Seasons (Alltime)
+
+Gruppierung
+- Teams
+- Players
+
+Datenpunkt
+- Points
+- Rebounds
+- Assissts
+- Blocks Steals
+- Turnovers
+- Three Pointers
+
+Zudem kann der Benutzer einen Vergleich (spezifische Season oder Alltime) zwischen Players auswählen.

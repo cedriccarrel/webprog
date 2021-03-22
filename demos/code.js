@@ -12,3 +12,13 @@ let punktePerson2 =15;
 let punktePerson3 = 6;
 let summePunkte = punktePerson1 + punktePerson2 + punktePerson3
 let mittelwertPunkte = summePunkte / 3
+
+let text = "Hallo";
+
+text.length
+text.charAt(4)
+text[4]
+text.substring(2,4)
+text.indexOf('a')
+
+"adfasf". 

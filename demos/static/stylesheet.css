@@ -30,12 +30,52 @@
     z-index: 3;
   }
 
-  .container_diagram {
-      position: relative;
-      top: 250px;
-      left: 50px;
-      width: 90%;
-      border-style: solid;
-      border-color: #ffffff;
-      border-radius: 15px;
+.container_diagram {
+    position: relative;
+    top: 250px;
+    left: 50px;
+    width: 90%;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 15px;
   }
+
+.filter-wrapper {
+    padding: 25px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.dropdownbutton {
+    background-color: #B52532;
+    color: #ffffff;
+    font-family: "Helvetica";
+    font-size: 20px;
+    width: 200px;
+    height: 75px;
+    border-radius: 10px;
+}
+
+.filter {
+    position: relative;
+    display: inline-block;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#ffffff;
+    min-width: 150px;
+    z-index: 1;
+  }
+
+.dropdown-content a {
+    color: #253B73;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.filter:hover .dropdown-content {display: block;}

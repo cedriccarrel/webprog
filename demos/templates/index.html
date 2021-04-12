@@ -1,133 +1,141 @@
 ﻿<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="NBA Stats" />
+    <meta name="author" content=", Simeon Solenthaler, Gian Stäuble, Cédric Carrel, Flurin Boeni"/>
+    <meta name="keywords" content="NBA, Stats, Digital Business Management" />
+    <meta name="date" content="21.03.2021" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="NBA Stats">
-    <meta name="author" content=", Simeon Solenthaler, Gian Stäuble, Cédric Carrel, Flurin Boeni">
-    <meta name="keywords" content="NBA, Stats, Digital Business Management">
-    <meta name="date" content="21.03.2021">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> <!-- Icons -->
-    <link rel="stylesheet" href="../static/stylesheet.css" type="text/css">
-    <link rel="stylesheet" href="../static/css0_navigation.css" type="text/css" /> 
-    <link rel="stylesheet" href="../static/bootstrap.css">
-    <link rel="stylesheet" href="../static/js/bootstrap.bundle.js">
-    <link rel="stylesheet" href="../static/css3_footer.css" type="text/css"> <!-- CSS File footer-->
+    <link rel="stylesheet" href="../static/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/bootstrap.css" type="text/css">
 
     <title>Stat Guru</title>
+  </head>
 
-</head>
+  <body>
+    <div class="header"></div>
 
-<body>
-
-    <div class="header">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning scrolling-navbar">
-            <a class="navbar-brand" href="/"><strong>Statguru</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Page1">Page1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Page2">Page2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Page3">Page3</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/Page4">Page4</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-        
-<div class ="wrapper">
-    <div class="container_title">
+    <div class="wrapper">
+      <div class="container_title">
         <h1 class="title_red">STAT GURU</h1>
         <h1 class="title_white">STAT GURU</h1>
-    </div>
+      </div>
 
-    <div class="container_diagram">
+      <div class="container_diagram">
         <div class="filter-wrapper">
-        <div class="filter">
-            <button class="dropdownbutton">Position</button>
-            <div class="dropdown-content">
-              <a href="#">Point Guard</a>
-              <a href="#">Shooting Guard</a>
-              <a href="#">Small Forward</a>
-              <a href="#">Power Forward</a>
-              <a href="#">Center</a>
+          <div class="filter-wrapper-player">
+            <div class="filter">
+              <button class="dropdownbutton">Team</button>
+              <div class="dropdown-content">
+                <a href="#">Atlanta Hawks</a>
+                <a href="#">Boston Celtics</a>
+                <a href="#">Brooklyn Nets</a>
+                <a href="#">Charlotte Hornets</a>
+                <a href="#">Chicago Bulls</a>
+                <a href="#">Cleveland Cavaliers</a>
+                <a href="#">Dallas Mavericks</a>
+                <a href="#">Denver Nuggets</a>
+                <a href="#">Detroit Pistons</a>
+                <a href="#">Golden State Warriors</a>
+                <a href="#">Houston Rockets</a>
+                <a href="#">Indiana Pacers</a>
+                <a href="#">Los Angeles Clippers</a>
+                <a href="#">Los Angeles Lakers</a>
+                <a href="#">Memphis Grizzlies</a>
+                <a href="#">Miami Heat</a>
+                <a href="#">Milwaukee Bucks</a>
+                <a href="#">Minnesota Timberwolves</a>
+                <a href="#">New Orleans Pelicans</a>
+                <a href="#">New York Knicks</a>
+                <a href="#">Oklahoma City Thunder</a>
+                <a href="#">Orlando Magic</a>
+                <a href="#">Philadelphia 76ers</a>
+                <a href="#">Phoenix Suns</a>
+                <a href="#">Portland Trail Blazers</a>
+                <a href="#">Sacramento Kings</a>
+                <a href="#">San Antonio Spurs</a>
+                <a href="#">Toronto Raptors</a>
+                <a href="#">Utah Jazz</a>
+                <a href="#">Washington Wizards</a>
+              </div>
+            </div>
+            <div class="filter">
+              <button class="dropdownbutton">Position</button>
+              <div class="dropdown-content">
+                <a href="#">Point Guard</a>
+                <a href="#">Shooting Guard</a>
+                <a href="#">Small Forward</a>
+                <a href="#">Power Forward</a>
+                <a href="#">Center</a>
+              </div>
+            </div>
+            <div class="filter">
+              <button class="dropdownbutton">Player 1</button>
+              <div class="dropdown-content">
+                <a href="#">xxxxx</a>
+              </div>
             </div>
           </div>
-          <div class="filter">
-            <button class="dropdownbutton">Team</button>
-            <div class="dropdown-content">
-              <a href="#">Atlanta Hawks</a>
-              <a href="#">Boston Celtics</a>
-              <a href="#">Brooklyn Nets</a>
-              <a href="#">Charlotte Hornets</a>
-              <a href="#">Chicago Bulls</a>
-              <a href="#">Cleveland Cavaliers</a>
-              <a href="#">Dallas Mavericks</a>
-              <a href="#">Denver Nuggets</a>
-              <a href="#">Detroit Pistons</a>
-              <a href="#">Golden State Warriors</a>
-              <a href="#">Houston Rockets</a>
-              <a href="#">Indiana Pacers</a>
-              <a href="#">Los Angeles Clippers</a>
-              <a href="#">Los Angeles Lakers</a>
-              <a href="#">Memphis Grizzlies</a>
-              <a href="#">Miami Heat</a>
-              <a href="#">Milwaukee Bucks</a>
-              <a href="#">Minnesota Timberwolves</a>
-              <a href="#">New Orleans Pelicans</a>
-              <a href="#">New York Knicks</a>
-              <a href="#">Oklahoma City Thunder</a>
-              <a href="#">Orlando Magic</a>
-              <a href="#">Philadelphia 76ers</a>
-              <a href="#">Phoenix Suns</a>
-              <a href="#">Portland Trail Blazers</a>
-              <a href="#">Sacramento Kings</a>
-              <a href="#">San Antonio Spurs</a>
-              <a href="#">Toronto Raptors</a>
-              <a href="#">Utah Jazz</a>
-              <a href="#">Washington Wizards</a>
+          <div class="filter-wrapper-player">
+            <div class="filter">
+              <button class="dropdownbutton">Team</button>
+              <div class="dropdown-content">
+                <a href="#">Atlanta Hawks</a>
+                <a href="#">Boston Celtics</a>
+                <a href="#">Brooklyn Nets</a>
+                <a href="#">Charlotte Hornets</a>
+                <a href="#">Chicago Bulls</a>
+                <a href="#">Cleveland Cavaliers</a>
+                <a href="#">Dallas Mavericks</a>
+                <a href="#">Denver Nuggets</a>
+                <a href="#">Detroit Pistons</a>
+                <a href="#">Golden State Warriors</a>
+                <a href="#">Houston Rockets</a>
+                <a href="#">Indiana Pacers</a>
+                <a href="#">Los Angeles Clippers</a>
+                <a href="#">Los Angeles Lakers</a>
+                <a href="#">Memphis Grizzlies</a>
+                <a href="#">Miami Heat</a>
+                <a href="#">Milwaukee Bucks</a>
+                <a href="#">Minnesota Timberwolves</a>
+                <a href="#">New Orleans Pelicans</a>
+                <a href="#">New York Knicks</a>
+                <a href="#">Oklahoma City Thunder</a>
+                <a href="#">Orlando Magic</a>
+                <a href="#">Philadelphia 76ers</a>
+                <a href="#">Phoenix Suns</a>
+                <a href="#">Portland Trail Blazers</a>
+                <a href="#">Sacramento Kings</a>
+                <a href="#">San Antonio Spurs</a>
+                <a href="#">Toronto Raptors</a>
+                <a href="#">Utah Jazz</a>
+                <a href="#">Washington Wizards</a>
+              </div>
             </div>
-          </div>
-          <div class="filter">
-            <button class="dropdownbutton">Game Type</button>
-            <div class="dropdown-content">
-              <a href="#">Regular Season</a>
-              <a href="#">Playoffs</a>
+            <div class="filter">
+              <button class="dropdownbutton">Position</button>
+              <div class="dropdown-content">
+                <a href="#">Point Guard</a>
+                <a href="#">Shooting Guard</a>
+                <a href="#">Small Forward</a>
+                <a href="#">Power Forward</a>
+                <a href="#">Center</a>
+              </div>
             </div>
-          </div>
-          <div class="filter">
-            <button class="dropdownbutton">Sort by</button>
-            <div class="dropdown-content">
-              <a href="#">Points</a>
-              <a href="#">Rebounds</a>
-              <a href="#">Assists</a>
-              <a href="#">Blocks</a>
-              <a href="#">Steals</a>
+            <div class="filter">
+              <button class="dropdownbutton">Player 2</button>
+              <div class="dropdown-content">
+                <a href="#">xxxxx</a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
-</div>
 
     <footer>
-        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-            <div class="container text-center">
-                <small>Copyright &copy; Statguru</small>
-            </div>
     </footer>
-
-</body>
-
+  </body>
 </html>

@@ -14,39 +14,38 @@ body {
 
 .container_title {
   position: relative;
-  left: 2vw;
+  left: 1vw;
 }
 
-.title {
+#title {
   font-family: "Helvetica";
   font-size: 100px;
-  position: absolute;
-}
-
-#title_red {
-  color: #B52532;
-}
-
-#title_white {
   color: #ffffff;
-  left: 5px;
-  top: 5px;
+  text-shadow: 6px 6px #B52532;
+  margin: 0;
+  padding-bottom: 1vh;
 }
 
 .container_diagram {
   position: relative;
   left: 1vw;
-  top: 20vh;
   border-style: solid;
   border-color: #ffffff;
   border-radius: 15px;
 }
 
 .filter-wrapper {
-  padding: 25px;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+.filter-player {
+  flex: 40vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   align-items: baseline;
 }
 
@@ -64,6 +63,7 @@ body {
 .filter {
   position: relative;
   display: inline-block;
+  padding: 1%;
 }
 
 .dropdown-content {
@@ -96,10 +96,19 @@ body {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1300px) {
-  .filter-player {
+.container-picture {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  }
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#picture {
+  flex: 25%;
+  height: 600px;
+  width: auto;
+  margin-left: 60vw;
+  background-image: url(../static/media/demar_derozan.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }

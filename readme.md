@@ -49,3 +49,7 @@ Datenpunkt
 - Three Pointers
 
 Zudem kann der Benutzer einen Vergleich (spezifische Season oder Alltime) zwischen Players auswählen.
+
+## Phase II - Doku
+
+![Phase II](./Phase_II.docx)

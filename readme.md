@@ -52,4 +52,4 @@ Zudem kann der Benutzer einen Vergleich (spezifische Season oder Alltime) zwisch
 
 ## Phase II - Doku
 
-![Phase II](./Phase_II.docx)
+![Phase_II](./Phase_II.docx)

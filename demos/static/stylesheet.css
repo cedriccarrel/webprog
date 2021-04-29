@@ -112,3 +112,67 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.wrapper-player{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 350px;
+}
+
+.container-player1{
+  width: 40%;
+  order: 1;
+}
+
+.picture-player1{
+  width: 50%;
+  order: 1;
+}
+
+.container-details1{
+  width: 50%;
+  order: 2;
+}
+
+.container-number-player1{
+  width: 50%;
+  order: 1;
+}
+
+.container-name-player1{
+  width: 50%;
+  order: 2;
+
+}
+
+.container-vs{
+  width: 20%;
+  order: 2;
+}
+
+.container-player2{
+  width: 40%;
+  order: 3;
+}
+
+.picture-player2{
+  width: 50%;
+  order: 1;
+}
+
+.container-details2{
+  width: 50%;
+  order: 2;
+}
+
+.container-number-player2{
+  width: 50%;
+  order: 1;
+}
+
+.container-name-player2{
+  width: 50%;
+  order: 2;
+
+}

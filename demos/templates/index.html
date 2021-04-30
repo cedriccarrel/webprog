@@ -12,6 +12,13 @@
 	<link rel="stylesheet" href="../static/stylesheet.css" type="text/css" />
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		fetch('data.json').then(function (result) {
+			return result.json()
+		}).then(function (data) {
+			console.log(data)
+		});
+	</script>
 
 	<title>Stat Guru</title>
 </head>
@@ -149,7 +156,7 @@
 					<p>foti1</p>
 				</div>
 				<div class="container-details1">
-					<div class="number-player1">
+					<div class="container-number-player1">
 						<p>nummer1</p>
 					</div>
 					<div class="container-name-player1">
@@ -166,7 +173,7 @@
 					<p>foti2</p>
 				</div>
 				<div class="container-details2">
-					<div class="number-player2">
+					<div class="container-number-player2">
 						<p>nummer2</p>
 					</div>
 					<div class="container-name-player2">

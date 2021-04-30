@@ -121,57 +121,90 @@ body {
 }
 
 .container-player1{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 40%;
   order: 1;
 }
 
 .picture-player1{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 1;
 }
 
 .container-details1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   width: 50%;
   order: 2;
 }
 
 .container-number-player1{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 1;
 }
 
 .container-name-player1{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 2;
 
 }
 
 .container-vs{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   width: 20%;
   order: 2;
 }
 
 .container-player2{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 40%;
   order: 3;
 }
 
 .picture-player2{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 1;
 }
 
 .container-details2{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   width: 50%;
   order: 2;
 }
 
 .container-number-player2{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 1;
 }
 
 .container-name-player2{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   width: 50%;
   order: 2;
 

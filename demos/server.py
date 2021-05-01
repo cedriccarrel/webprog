@@ -1,29 +1,76 @@
 from flask import Flask, render_template
 import json
-from nba_api.stats.endpoints import commonplayerinfo #pip install nba_api
+import re
+from nba_api.stats.library.data import players
+from nba_api.stats.library.data import player_index_id, player_index_full_name, player_index_first_name, player_index_last_name, player_index_is_active
 
 app = Flask(__name__)
 
-# Basic Request
-player_info = commonplayerinfo.CommonPlayerInfo(player_id=2544)
+def _find_players(regex_pattern, row_id):
+    players_found = []
+    for player in players:
+        if re.search(regex_pattern, str(player[row_id]), flags=re.I):
+            players_found.append(_get_player_dict(player))
+    return players_found
 
 
-custom_headers = {
-    'Host': 'stats.nba.com',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Referer': 'https://stats.nba.com/',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive',
-}
-# Only available after v1.1.0
-# Proxy Support, Custom Headers Support, Timeout Support (in seconds)
-player_info = commonplayerinfo.CommonPlayerInfo(player_id=2544, proxy='127.0.0.1:80', headers=custom_headers, timeout=100)
+def _get_player_dict(player_row):
+    return {
+        'id': player_row[player_index_id],
+        'full_name': player_row[player_index_full_name],
+        'first_name': player_row[player_index_first_name],
+        'last_name': player_row[player_index_last_name],
+        'is_active': player_row[player_index_is_active]
+    }
 
 
-@app.route('/')
+def find_players_by_full_name(regex_pattern):
+    return _find_players(regex_pattern, player_index_full_name)
+
+
+def find_players_by_first_name(regex_pattern):
+    return _find_players(regex_pattern, player_index_first_name)
+
+
+def find_players_by_last_name(regex_pattern):
+    return _find_players(regex_pattern, player_index_last_name)
+
+
+def find_player_by_id(player_id):
+    regex_pattern = '^{}$'.format(player_id)
+    players_list = _find_players(regex_pattern, player_index_id)
+    if len(players_list) > 1:
+        raise Exception('Found more than 1 id')
+    elif not players_list:
+        return None
+    else:
+        return players_list[0]
+
+
+def get_players():
+    players_list = []
+    for player in players:
+        players_list.append(_get_player_dict(player))
+    return players_list
+
+
+def get_active_players():
+    players_list = []
+    for player in players:
+        if player[player_index_is_active]:
+            players_list.append(_get_player_dict(player))
+    return players_list
+
+
+def get_inactive_players():
+    players_list = []
+    for player in players:
+        if not player[player_index_is_active]:
+            players_list.append(_get_player_dict(player))
+    return players_list
+
 #json laden für Ausgaben, Userdata
+"""
 def lade_daten_aus_json (pfad, standard_wert = []):
     try:
         with open(pfad, 'r') as datei:
@@ -35,12 +82,13 @@ def lade_daten_aus_json (pfad, standard_wert = []):
 def schreibe_daten_in_json(pfad, daten):
     with open(pfad, 'w') as datei:
         json.dump(daten, datei, indent = 4)
-
-
-
+"""
+@app.route('/')
 def index():
-	return render_template('/index.html')
-
+    test_player_id1 = find_player_by_id(76006)
+    test_player_id = test_player_id1['full_name']
+    print(test_player_id)
+    return render_template("/index.html", test_player_id = test_player_id)
 
 
 

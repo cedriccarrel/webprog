@@ -3,8 +3,28 @@ import json
 import re
 from nba_api.stats.library.data import players
 from nba_api.stats.library.data import player_index_id, player_index_full_name, player_index_first_name, player_index_last_name, player_index_is_active
+import requests
+
 
 app = Flask(__name__)
+
+
+""" #API-Teams
+url = "https://api-basketball.p.rapidapi.com/teams"
+
+querystring = {"league":"12","season":"2020-2021"}
+
+headers = {
+    'x-rapidapi-key': "46e198f942msh1ed866ffdc3d91cp177a3bjsn1ebc54ccb8a4",
+    'x-rapidapi-host': "api-basketball.p.rapidapi.com"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+
+"""
+
 
 def _find_players(regex_pattern, row_id):
     players_found = []
@@ -83,7 +103,7 @@ def schreibe_daten_in_json(pfad, daten):
     with open(pfad, 'w') as datei:
         json.dump(daten, datei, indent = 4)
 """
-@app.route('/')
+@app.route('/',  methods=['GET', 'POST'])
 def index():
     test_player_id1 = find_player_by_id(76006)
     test_player_id = test_player_id1['full_name']

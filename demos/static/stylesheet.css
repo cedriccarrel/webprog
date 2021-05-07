@@ -166,6 +166,14 @@ body {
   order: 1;
 }
 
+.logo-team1{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 50%;
+  order: 1;
+}
+
 .container-details1{
   display: flex;
   flex-flow: row wrap;
@@ -208,6 +216,14 @@ body {
 }
 
 .picture-player2{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 50%;
+  order: 1;
+}
+
+.logo-team2{
   display: flex;
   flex-flow: column wrap;
   justify-content: center;

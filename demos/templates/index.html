@@ -15,14 +15,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-	<script>
-		$("dropdown-content-team a").click(function () {
-			let team = $(this).attr('data-name')
-            console.log(team)
-		});
-
-	</script>
-
 	<title>Stat Guru</title>
 </head>
 
@@ -158,6 +150,9 @@
 				<div class="picture-player1">
 					<p>foti1</p>
 				</div>
+				<div class="logo-team1">
+					<p>teamlogo1</p>
+				</div>
 				<div class="container-details1">
 					<div class="container-number-player1">
 						<p>nummer1</p>
@@ -175,6 +170,9 @@
 				<div class="picture-player2">
 					<p>foti2</p>
 				</div>
+				<div class="logo-team2">
+					<p>teamlogo2</p>
+				</div>
 				<div class="container-details2">
 					<div class="container-number-player2">
 						<p>nummer2</p>
@@ -187,6 +185,38 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		//Hole Teambild nach Click via API
+		/*const settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://api-basketball.p.rapidapi.com/teams?league=12&season=2020-2021",
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-key": "",
+				"x-rapidapi-host": "api-basketball.p.rapidapi.com"
+			}
+		};
+
+
+		$(".dropdown-content-team a").click(function () {
+			let team = $(this).attr('data-name')
+            console.log(team)
+			$.ajax(settings).done(function (response) {
+				const api_url = response
+				console.log(api_url);
+				const apiteam = api_url.response("name"); //checki nöd wieso
+            	console.log(apiteam)
+				$.get( apiteam, function( data ) {
+            	    console.log(data);
+					const logo = data.response.logo
+            	    console.log(data.response.logo);
+            	    $(".team-logo1").text(logo)
+				});
+			});
+		});*/
+
+	</script>
 	<footer>
 		
 	</footer>

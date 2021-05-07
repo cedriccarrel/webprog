@@ -96,6 +96,36 @@ body {
   text-decoration: none;
 }
 
+.dropdown-content-team {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  font-family: "Helvetica";
+  font-size: 15px;
+  text-decoration: none;
+  width: 200px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dropdown-content-team a {
+  color: #253B73;
+  padding: 12px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.filter:hover .dropdown-content-team {
+  display: block;
+}
+
+.dropdown-content-team a:hover {
+  background-color: #B52532;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .container-picture {
   display: flex;
   flex-direction: row;

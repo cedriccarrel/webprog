@@ -158,7 +158,9 @@
 						<p>nummer1</p>
 					</div>
 					<div class="container-name-player1">
-						<p>{{ test_player_id }}</p>
+						<p id="player_firstname"></p>
+						<p id="player_lastname"></p>
+						<p>Name</p>
 						<p>Position und Team</p>
 					</div>
 				</div>
@@ -186,35 +188,39 @@
 		</div>
 	</div>
 	<script>
-		//Hole Teambild nach Click via API
-		/*const settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "https://api-basketball.p.rapidapi.com/teams?league=12&season=2020-2021",
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-key": "",
-				"x-rapidapi-host": "api-basketball.p.rapidapi.com"
-			}
-		};
+		//Alle Teams aus API Holen und in Variable speichern
+		//const api_teams_url = 'https://www.balldontlie.io/api/v1/teams'
+		 /*let all_teams = ["atlant", "test", "test2"]
+
+		 function get_teams(id, obj_name) {
+			 var result = '';
+			 for (var i in id) {
+				 result += obj_name + '.' + i + ' = ' + id[i] + '<br>';
+				}
+				result += '<hr>';
+				return result;
+			}*/
+
+
+
+
+		//Hole Spieler nach Click auf Team via API
+		const api_url = 'https://www.balldontlie.io/api/v1/players'
 
 
 		$(".dropdown-content-team a").click(function () {
 			let team = $(this).attr('data-name')
             console.log(team)
-			$.ajax(settings).done(function (response) {
-				const api_url = response
-				console.log(api_url);
-				const apiteam = api_url.response("name"); //checki nöd wieso
-            	console.log(apiteam)
-				$.get( apiteam, function( data ) {
-            	    console.log(data);
-					const logo = data.response.logo
-            	    console.log(data.response.logo);
-            	    $(".team-logo1").text(logo)
-				});
+            $.get( api_url, function( data ) {
+                console.log(data);
+                const player_firstname = data.data.first_name
+                console.log(data.data[0].first_name);
+                const player_lastname = data.data[0].last_name
+				console.log(data.data[0].last_name)
+                $("#player_firstname").text(player_firstname)
+				$("#player_lastname").text(player_lastname)
 			});
-		});*/
+		});
 
 	</script>
 	<footer>

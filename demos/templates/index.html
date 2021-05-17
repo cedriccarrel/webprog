@@ -29,37 +29,7 @@
 				<div class="filter-player">
 					<div class="filter">
 						<button class="dropdownbutton">Team</button>
-						<div class="dropdown-content-team">
-								<a data-name="Atlanta Hawks">Atlanta Hawks</a>
-								<a href="#">Boston Celtics</a>
-								<a href="#">Brooklyn Nets</a>
-								<a href="#">Charlotte Hornets</a>
-								<a href="#">Chicago Bulls</a>
-								<a href="#">Cleveland Cavaliers</a>
-								<a href="#">Dallas Mavericks</a>
-								<a href="#">Denver Nuggets</a>
-								<a href="#">Detroit Pistons</a>
-								<a href="#">Golden State Warriors</a>
-								<a href="#">Houston Rockets</a>
-								<a href="#">Indiana Pacers</a>
-								<a href="#">Los Angeles Clippers</a>
-								<a href="#">Los Angeles Lakers</a>
-								<a href="#">Memphis Grizzlies</a>
-								<a href="#">Miami Heat</a>
-								<a href="#">Milwaukee Bucks</a>
-								<a href="#">Minnesota Timberwolves</a>
-								<a href="#">New Orleans Pelicans</a>
-								<a href="#">New York Knicks</a>
-								<a href="#">Oklahoma City Thunder</a>
-								<a href="#">Orlando Magic</a>
-								<a href="#">Philadelphia 76ers</a>
-								<a href="#">Phoenix Suns</a>
-								<a href="#">Portland Trail Blazers</a>
-								<a href="#">Sacramento Kings</a>
-								<a href="#">San Antonio Spurs</a>
-								<a href="#">Toronto Raptors</a>
-								<a href="#">Utah Jazz</a>
-								<a href="#">Washington Wizards</a>
+						<div class="dropdown-content-team" id="teams-dropdown"> 
 						</div>
 					</div>
 				<div class="filter">
@@ -188,22 +158,14 @@
 		</div>
 	</div>
 	<script>
+
 		//Alle Teams aus API Holen und in Variable speichern
 		//const api_teams_url = 'https://www.balldontlie.io/api/v1/teams'
-		 /*let all_teams = ["atlant", "test", "test2"]
-
-		 function get_teams(id, obj_name) {
-			 var result = '';
-			 for (var i in id) {
-				 result += obj_name + '.' + i + ' = ' + id[i] + '<br>';
-				}
-				result += '<hr>';
-				return result;
-			}*/
+		
 
 
 
-
+/*
 		//Hole Spieler nach Click auf Team via API
 		const api_url = 'https://www.balldontlie.io/api/v1/players'
 
@@ -213,18 +175,20 @@
             console.log(team)
             $.get( api_url, function( data ) {
                 console.log(data);
-                const player_firstname = data.data.first_name
-                console.log(data.data[0].first_name);
-                const player_lastname = data.data[0].last_name
-				console.log(data.data[0].last_name)
+                const player_firstname = data.data["Ron"].first_name
+                console.log(data.data["Ron"].first_name);
+                const player_lastname = data.data[1].last_name
+				console.log(data.data[1].last_name)
                 $("#player_firstname").text(player_firstname)
 				$("#player_lastname").text(player_lastname)
 			});
-		});
+		});*/
 
 	</script>
 	<footer>
 		
 	</footer>
+	<script src= "{{ url_for('static', filename='js/index.js') }}"></script> 
+
 </body>
 </html>

@@ -16,7 +16,7 @@ $.get ("/teams", function (data) {
         console.log($(this))
         let teamId = $(this).data("id")
         console.log(teamId)
-        $.get (`/players?id=${teamId}`, function (data) {
+        $.get (`/players/${teamId}`, function (data) {
             console.log(data)
         })
     })
@@ -24,3 +24,8 @@ $.get ("/teams", function (data) {
 
 })
 
+
+/*
+$.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
+  console.log(res)
+});*/

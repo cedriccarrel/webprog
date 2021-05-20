@@ -31,9 +31,8 @@ def teams():
 	teams = lade_teams()
 	return teams
 
-@app.route('/players')
-def players():
-	team_id = int(request.args.get("id"))
+@app.route('/players/<int:team_id>')
+def players(team_id):
 	print(team_id)
 	players = lade_players()
 	result = {

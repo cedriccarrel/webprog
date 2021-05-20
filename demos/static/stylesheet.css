@@ -182,7 +182,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   order: 2;
-  background: #1a477b;
+  background: #253B73;
   color:white;
   font-weight: bold;
 }
@@ -191,16 +191,19 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
+  width: 20%;
   order: 1;
+  font-size: 30px;
 }
 
 .container-name-player1{
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
+  width: 80%;
   order: 2;
+  background-color: #1a477b;
+  align-content:flex-end;
 
 }
 
@@ -210,10 +213,11 @@ body {
   justify-content: center;
   width: 20%;
   order: 2;
-  background-color: #1a477b;
+  background-color: #253B73;
   color: white;
   font-family: "Helvetica";
   align-content: center;
+  font-size:30px;
 }
 
 .container-player2{
@@ -237,8 +241,8 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
   order: 1;
+  align-content: flex-end;
 }
 
 .container-details2{
@@ -246,7 +250,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   order: 2;
-  background-color: #1a477b;
+  background-color: #253B73;
   color: white;
   font-weight: bold;
 }
@@ -255,15 +259,18 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
-  order: 1;
+  width: 20%;
+  order: 2;
+  align-content: flex-end;
+  font-size: 30px;
 }
 
 .container-name-player2{
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
-  order: 2;
+  width: 80%;
+  order: 1;
+  background-color: #1a477b;
 
 }

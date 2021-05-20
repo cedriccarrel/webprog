@@ -148,6 +148,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   height: 350px;
+  font-family: "Helvetica";
 }
 
 .container-player1{
@@ -156,6 +157,8 @@ body {
   justify-content: center;
   width: 40%;
   order: 1;
+  background-color: white;
+  font-family: "Helvetica"
 }
 
 .picture-player1{
@@ -178,8 +181,10 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 50%;
   order: 2;
+  background: #1a477b;
+  color:white;
+  font-weight: bold;
 }
 
 .container-number-player1{
@@ -205,6 +210,10 @@ body {
   justify-content: center;
   width: 20%;
   order: 2;
+  background-color: #1a477b;
+  color: white;
+  font-family: "Helvetica";
+  align-content: center;
 }
 
 .container-player2{
@@ -213,6 +222,7 @@ body {
   justify-content: center;
   width: 40%;
   order: 3;
+  background-color: white;
 }
 
 .picture-player2{
@@ -235,8 +245,10 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 50%;
   order: 2;
+  background-color: #1a477b;
+  color: white;
+  font-weight: bold;
 }
 
 .container-number-player2{

@@ -55,16 +55,16 @@ def teams2():
 def players2(team_id):
 	print(team_id)
 	players2 = lade_players()
-	result = {
+	result2 = {
 		"players": []
 	}
 	for player in players2["data"]:
 		print(player)
 		print(team_id)
 		if int(player["team"]["id"]) == team_id:
-			result["players"].append(player)
-	result["players"] = result["players"][:15]
-	return result
+			result2["players"].append(player)
+	result2["players"] = result2["players"][:15]
+	return result2
 
 if __name__ == "__main__":
 	app.run(debug=True)

@@ -4,8 +4,8 @@ let playersDropdown = $("#players-dropdown")
 let playersDropdown2 = $("#players2-dropdown")
 
 /* Changes Flurin
-let seasonaveragesplayer1 = $("stats_player1")
-let seasonaveragesplayer2 = $("stats_player2")
+let seasonaveragesplayer1 = $("#stats_player1")
+let seasonaveragesplayer2 = $("#stats_player2")
 */
 
 function clickedOnTeam (event) {
@@ -27,15 +27,21 @@ $.get ("/teams", function (data) {
         $.get (`/players/${teamId}`, function (data) {
             console.log(data)
             playersDropdown.empty()
-            for (player of data.players) {
+            for (player of data.data) {
                 let linkPlayer = `<a data-name="${player.first_name}" data-id=${player.id}>${player.first_name}</a> `
                 playersDropdown.append(linkPlayer)
             }
             
         })
+        
     })
-
-
+    /* Changes Flurin
+    playersDropdown.find('a').click(function () {
+        console.log($(this))
+        let player_Id1 = $(this).data("id")
+        console.log(player_Id1)
+    })
+    */
 })
 
 $.get ("/teams2", function (data2) {
@@ -51,20 +57,20 @@ $.get ("/teams2", function (data2) {
         console.log(teamId2)
         $.get (`/players2/${teamId2}`, function (data2) {
             console.log(data2)
+            playersDropdown2.empty()
+            for (player2 of data2.data) {
+                let linkPlayer2 = `<a data-name="${player2.first_name}" data-id=${player2.id}>${player2.first_name}</a> `
+                playersDropdown2.append(linkPlayer2)
+            }
         })
     })
-
-
+    
+    /* Changes Flurin
+    var obj_1 = { id_1: 'player1.id'};
+    var obj_2 = { id_2: 'player2.id'};
+    var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2);
+    
+    $.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
+        console.log(res)
+    });*/
 })
-/* Changes Flurin
-function clickedOnPlayer (event) {
-    console.log(event.target)
-}
-
-var obj_1 = { id_1: 'player_id'};
-var obj_2 = { id_2: 'player_id'};
-var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2);
-
-$.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
-  console.log(res)
-});*/

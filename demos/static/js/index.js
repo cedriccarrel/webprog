@@ -3,6 +3,11 @@ let teamsDropdown2 = $("#teams2-dropdown")
 let playersDropdown = $("#players-dropdown")
 let playersDropdown2 = $("#players2-dropdown")
 
+/* Changes Flurin
+let seasonaveragesplayer1 = $("stats_player1")
+let seasonaveragesplayer2 = $("stats_player2")
+*/
+
 function clickedOnTeam (event) {
     console.log(event.target)
 }
@@ -51,7 +56,15 @@ $.get ("/teams2", function (data2) {
 
 
 })
-/*
+/* Changes Flurin
+function clickedOnPlayer (event) {
+    console.log(event.target)
+}
+
+var obj_1 = { id_1: 'player_id'};
+var obj_2 = { id_2: 'player_id'};
+var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2);
+
 $.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
   console.log(res)
 });*/

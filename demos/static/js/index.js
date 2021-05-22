@@ -27,22 +27,23 @@ $.get ("/teams", function (data) {
         $.get (`/players/${teamId}`, function (data) {
             console.log(data)
             playersDropdown.empty()
-            for (player of data.data) {
-                let linkPlayer = `<a data-name="${player.first_name}" data-id=${player.id}>${player.first_name}</a> `
+            for (player of data.players) {
+                let linkPlayer = `<a data-name="${player.first_name} ${player.last_name}" data-id=${player.id}>${player.first_name} ${player.last_name}</a> `
                 playersDropdown.append(linkPlayer)
             }
+            playersDropdown.find('a').click(function () {
+                console.log($(this))
+                let player_Id1 = $(this).data("id")
+                console.log(player_Id1)
+                var obj_1 = player_Id1
+               
+            })
             
         })
         
     })
-    /* Changes Flurin
-    playersDropdown.find('a').click(function () {
-        console.log($(this))
-        let player_Id1 = $(this).data("id")
-        console.log(player_Id1)
-    })
-    */
 })
+
 
 $.get ("/teams2", function (data2) {
     console.log(data2)
@@ -58,12 +59,25 @@ $.get ("/teams2", function (data2) {
         $.get (`/players2/${teamId2}`, function (data2) {
             console.log(data2)
             playersDropdown2.empty()
-            for (player2 of data2.data) {
-                let linkPlayer2 = `<a data-name="${player2.first_name}" data-id=${player2.id}>${player2.first_name}</a> `
+            for (player2 of data2.players) {
+                let linkPlayer2 = `<a data-name="${player2.first_name} ${player2.last_name}" data-id=${player2.id}>${player2.first_name} ${player2.last_name}</a> `
                 playersDropdown2.append(linkPlayer2)
             }
+            playersDropdown2.find('a').click(function () {
+                console.log($(this))
+                let player_Id2 = $(this).data("id")
+                console.log(player_Id2)
+                $("#player2_firstname").text(player_Id2)
+                var obj_2 = player_Id2
+                var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2)
+                console.log(url)
+                
+
+            })
         })
+    
     })
+})
     
     /* Changes Flurin
     var obj_1 = { id_1: 'player1.id'};
@@ -73,4 +87,4 @@ $.get ("/teams2", function (data2) {
     $.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
         console.log(res)
     });*/
-})
+

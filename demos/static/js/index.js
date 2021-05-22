@@ -74,9 +74,17 @@ $.get ("/teams2", function (data2) {
                 let player_Id2 = $(this).data("id")
                 console.log(player_Id2)
                 $("#player2_firstname").text(player_Id2)
+
+                /*
+                $.get (`/players2/${player_Id2}`, function (data2) {
+                    console.log(data2)
+                    let player2_name = `<a data-name="${player_Id2.first_name} ${player_Id2.last_name}" data-id=${player_Id2.id}>${player_Id2.first_name} ${player_Id2.last_name}</a> `
+                    $("#player2_firstname").text(player2_name)
+                })
+
                 let url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(player_Id1) + '&player_ids[]=' + $.param(player_Id2)
                 console.log(url)
-
+                */
                 /*
                 $("#player2_firstname").text(`<a data-name="${player_Id2.first_name} ${player_Id2.last_name}" data-id=${player_Id2.id}>${player_Id2.first_name} ${player_Id2.last_name}</a> `)
                 */

@@ -2,7 +2,14 @@ let teamsDropdown = $("#teams-dropdown")
 let teamsDropdown2 = $("#teams2-dropdown")
 let playersDropdown = $("#players-dropdown")
 let playersDropdown2 = $("#players2-dropdown")
-
+/*
+let player_url_Id2 = $.get(`/players2/${teamId2}`); promise.then (function(data2) {
+    console.log(data2)
+})
+let player_url_Id1 = $.get(`/players/${teamId}`); promise.then (function(data) {
+    console.log(data)
+})
+*/
 /* Changes Flurin
 let seasonaveragesplayer1 = $("#stats_player1")
 let seasonaveragesplayer2 = $("#stats_player2")
@@ -35,7 +42,6 @@ $.get ("/teams", function (data) {
                 console.log($(this))
                 let player_Id1 = $(this).data("id")
                 console.log(player_Id1)
-                var obj_1 = player_Id1
                
             })
             
@@ -68,10 +74,12 @@ $.get ("/teams2", function (data2) {
                 let player_Id2 = $(this).data("id")
                 console.log(player_Id2)
                 $("#player2_firstname").text(player_Id2)
-                var obj_2 = player_Id2
-                var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2)
+                let url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(player_Id1) + '&player_ids[]=' + $.param(player_Id2)
                 console.log(url)
-                
+
+                /*
+                $("#player2_firstname").text(`<a data-name="${player_Id2.first_name} ${player_Id2.last_name}" data-id=${player_Id2.id}>${player_Id2.first_name} ${player_Id2.last_name}</a> `)
+                */
 
             })
         })

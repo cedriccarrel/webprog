@@ -46,25 +46,5 @@ def players(team_id):
 	result["players"] = result["players"][:15]
 	return result
 
-@app.route('/teams2')
-def teams2():
-	teams2 = lade_teams()
-	return teams2
-
-@app.route('/players2/<int:team_id>')
-def players2(team_id):
-	print(team_id)
-	players2 = lade_players()
-	result2 = {
-		"players": []
-	}
-	for player in players2["data"]:
-		print(player)
-		print(team_id)
-		if int(player["team"]["id"]) == team_id:
-			result2["players"].append(player)
-	result2["players"] = result2["players"][:15]
-	return result2
-
 if __name__ == "__main__":
 	app.run(debug=True)

@@ -19,88 +19,70 @@ function clickedOnTeam (event) {
     console.log(event.target)
 }
 
-$.get ("/teams", function (data) {
-    console.log(data)
+async function initializeTeamOne() {
     teamsDropdown.empty()
-    for (team of data.data) {
-        let linkElement = `<a data-name="${team.full_name}" data-id=${team.id}>${team.full_name}</a> `
-        teamsDropdown.append(linkElement)
-    }
-    //https://stackoverflow.com/questions/590163/how-to-get-all-options-of-a-select-using-jquery
-    teamsDropdown.find('a').click(function () {
-        console.log($(this))
+    const teamsResponse = await fetch("/teams");
+    const jsonData = await teamsResponse.json();
+    const teamLinkElements = jsonData.data.map(team => `<a data-name="${team.full_name}" data-id=${team.id}>${team.full_name}</a> `);
+    teamsDropdown.append(...teamLinkElements);
+
+    teamsDropdown.find('a').click(async function () {
+        playersDropdown.empty()
         let teamId = $(this).data("id")
-        console.log(teamId)
-        $.get (`/players/${teamId}`, function (data) {
-            console.log(data)
-            playersDropdown.empty()
-            for (player of data.players) {
-                let linkPlayer = `<a data-name="${player.first_name} ${player.last_name}" data-id=${player.id}>${player.first_name} ${player.last_name}</a> `
-                playersDropdown.append(linkPlayer)
-            }
-            playersDropdown.find('a').click(function () {
+        const playersInTeamResponse = await fetch(`/players/${teamId}`);
+        const playersInTeamJsonData = await playersInTeamResponse.json();
+        const playerLinkElements = playersInTeamJsonData.players.map(player => `<a data-name="${player.first_name} ${player.last_name}" data-position="${player.position}" data-teamname="${player.team.full_name}" data-conference="${player.team.conference}" data-division="${player.team.division}" data-id=${player.id}>${player.first_name} ${player.last_name}</a> `)
+        playersDropdown.append(...playerLinkElements)
+        playersDropdown.find('a').click(function () {
                 console.log($(this))
                 let player_Id1 = $(this).data("id")
+                let player1_name = $(this).data("name")
+                let player1_teamname = $(this).data("teamname")
+                let player1_conference = $(this).data("conference")
+                let player1_division = $(this).data("division")
+                let url1 = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(player_Id1)
                 console.log(player_Id1)
-               
-            })
-            
+                console.log(player1_name)
+                console.log(player1_teamname)
+                console.log(player1_conference)
+                console.log(player1_division)
+                console.log(url1)
         })
-        
     })
-})
+}
 
+initializeTeamOne()
 
-$.get ("/teams2", function (data2) {
-    console.log(data2)
+async function initializeTeamTwo() {
     teamsDropdown2.empty()
-    for (team2 of data2.data) {
-        let linkElement2 = `<a data-name="${team2.full_name}" data-id=${team2.id}>${team2.full_name}</a> `
-        teamsDropdown2.append(linkElement2)
-    }
-    teamsDropdown2.find('a').click(function () {
-        console.log($(this))
-        let teamId2 = $(this).data("id")
-        console.log(teamId2)
-        $.get (`/players2/${teamId2}`, function (data2) {
-            console.log(data2)
-            playersDropdown2.empty()
-            for (player2 of data2.players) {
-                let linkPlayer2 = `<a data-name="${player2.first_name} ${player2.last_name}" data-id=${player2.id}>${player2.first_name} ${player2.last_name}</a> `
-                playersDropdown2.append(linkPlayer2)
-            }
-            playersDropdown2.find('a').click(function () {
+    const teamsResponse = await fetch("/teams");
+    const jsonData = await teamsResponse.json();
+    const teamLinkElements = jsonData.data.map(team => `<a data-name="${team.full_name}" data-id=${team.id}>${team.full_name}</a> `);
+    teamsDropdown2.append(...teamLinkElements);
+
+    teamsDropdown.find('a').click(async function () {
+        playersDropdown2.empty()
+        let teamId = $(this).data("id")
+        const playersInTeamResponse = await fetch(`/players/${teamId}`);
+        const playersInTeamJsonData = await playersInTeamResponse.json();
+        const playerLinkElements = playersInTeamJsonData.players.map(player => `<a data-name="${player.first_name} ${player.last_name}" data-position="${player.position}" data-teamname="${player.team.full_name}" data-conference="${player.team.conference}" data-division="${player.team.division}" data-id=${player.id}>${player.first_name} ${player.last_name}</a> `)
+        playersDropdown2.append(...playerLinkElements)
+        playersDropdown2.find('a').click(function () {
                 console.log($(this))
                 let player_Id2 = $(this).data("id")
+                let player2_name = $(this).data("name")
+                let player2_teamname = $(this).data("teamname")
+                let player2_conference = $(this).data("conference")
+                let player2_division = $(this).data("division")
+                let url2 = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(player_Id2)
                 console.log(player_Id2)
-                $("#player2_firstname").text(player_Id2)
-
-                /*
-                $.get (`/players2/${player_Id2}`, function (data2) {
-                    console.log(data2)
-                    let player2_name = `<a data-name="${player_Id2.first_name} ${player_Id2.last_name}" data-id=${player_Id2.id}>${player_Id2.first_name} ${player_Id2.last_name}</a> `
-                    $("#player2_firstname").text(player2_name)
-                })
-
-                let url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(player_Id1) + '&player_ids[]=' + $.param(player_Id2)
-                console.log(url)
-                */
-                /*
-                $("#player2_firstname").text(`<a data-name="${player_Id2.first_name} ${player_Id2.last_name}" data-id=${player_Id2.id}>${player_Id2.first_name} ${player_Id2.last_name}</a> `)
-                */
-
-            })
+                console.log(player2_name)
+                console.log(player2_teamname)
+                console.log(player2_conference)
+                console.log(player2_division)
+                console.log(url2)
         })
-    
     })
-})
-    
-    /* Changes Flurin
-    var obj_1 = { id_1: 'player1.id'};
-    var obj_2 = { id_2: 'player2.id'};
-    var url = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[]=' + $.param(obj_1) + '&player_ids[]=' + $.param(obj_2);
-    
-    $.get("https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2", function(res) {
-        console.log(res)
-    });*/
+}
 
+initializeTeamTwo()

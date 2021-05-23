@@ -43,7 +43,7 @@ def players(team_id):
 		print(team_id)
 		if int(player["team"]["id"]) == team_id:
 			result["players"].append(player)
-	result["players"] = result["players"][:15]
+	result["players"] = result["players"][45:60]
 	return result
 
 if __name__ == "__main__":

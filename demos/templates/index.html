@@ -14,6 +14,7 @@
 	<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<title>STAT GURU by oktofinance</title>
 </head>
@@ -51,15 +52,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="chart">
+			<!--<div class="chart">
 				<img src="../static/media/screenshot.JPG">
-				<!--Google Charts zur Visualisierung der Daten
-				<div id="piechart"></div>-->
-			</div>
+				Google Charts zur Visualisierung der Daten
+				<div id="piechart"></div>
+			</div>-->
 		</div>
-		<div class="container-picture">
-			<div id="picture"></div>
-		</div>
+
 		<div class="wrapper-player">
 			<!--<div class="container-picture">
 				<div id="picture"></div>
@@ -77,11 +76,15 @@
 						<p id="team"></p>
 					</div>
 				</div>
-				<div id="stats_player1"></div>
+				<div>
+					<canvas id="player1chart"></canvas>
+				</div>
 			</div>
+
 			<div class="container-vs">
 				<h1>VS</h1>
 			</div>
+
 			<div class="container-player2">
 				<div class="logo-team2">
 					<p id="division2"></p>
@@ -95,9 +98,16 @@
 						<p id="team2"></p>
 					</div>
 				</div>
-				<div id="stats_player2"></div>
+				<div>
+					<canvas id="player2chart"></canvas>
+				</div>
 			</div>
+
 		</div>
+
+		<!--<div class="container-picture">
+			<div id="picture"></div>
+		</div>-->
 	</div>
 
 	<footer>

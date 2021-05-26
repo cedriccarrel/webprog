@@ -3,7 +3,9 @@ from flask import render_template
 from flask import request
 from flask import jsonify
 from flask import json 
+from flask.helpers import send_from_directory
 import os
+
 
 
 app = Flask(__name__)
@@ -23,8 +25,12 @@ def lade_players():
 
 @app.route('/')
 def index():
-
 	return render_template('index.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico')
 
 @app.route('/teams')
 def teams():
@@ -33,17 +39,14 @@ def teams():
 
 @app.route('/players/<int:team_id>')
 def players(team_id):
-	print(team_id)
 	players = lade_players()
 	result = {
 		"players": []
 	}
 	for player in players["data"]:
-		print(player)
-		print(team_id)
 		if int(player["team"]["id"]) == team_id:
 			result["players"].append(player)
-	result["players"] = result["players"][45:60]
+	result["players"] = result["players"][100:120] # was result["players"][45:60]
 	return result
 
 if __name__ == "__main__":

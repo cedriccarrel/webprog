@@ -145,66 +145,37 @@ body {
 
 .wrapper-player{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  height: 350px;
+  flex-flow: row nowrap;
+  justify-content: space-around;
   font-family: "Helvetica";
 }
 
-.container-player1{
+.container-player{
   display: flex;
+  flex: 50vw;
   flex-flow: column wrap;
+  margin: 8px;
   justify-content: center;
-  width: 40%;
-  order: 1;
-  background-color: white;
-  font-family: "Helvetica"
+  color: white;
 }
 
-.picture-player1{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 50%;
-  order: 1;
-}
-
-.logo-team1{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 50%;
-  order: 1;
-}
-
-.container-details1{
+.player-text {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.container-geography{
+  display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  order: 2;
-  background: #253B73;
-  color:white;
+}
+
+.container-details{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   font-weight: bold;
-}
-
-.container-number-player1{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 20%;
-  order: 1;
-  font-size: 30px;
-}
-
-.container-name-player1{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 80%;
-  order: 2;
-  background-color: #1a477b;
-  align-content:flex-end;
-
 }
 
 .container-vs{
@@ -212,65 +183,13 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   width: 20%;
-  order: 2;
-  background-color: #253B73;
   color: white;
-  font-family: "Helvetica";
   align-content: center;
   font-size:30px;
 }
 
-.container-player2{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 40%;
-  order: 3;
-  background-color: white;
-}
-
-.picture-player2{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 50%;
-  order: 1;
-}
-
-.logo-team2{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  order: 1;
-  align-content: flex-end;
-}
-
-.container-details2{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  order: 2;
-  background-color: #253B73;
-  color: white;
-  font-weight: bold;
-}
-
-.container-number-player2{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 20%;
-  order: 2;
-  align-content: flex-end;
-  font-size: 30px;
-}
-
-.container-name-player2{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 80%;
-  order: 1;
-  background-color: #1a477b;
-
+.container-chart {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 4px 4px #B52532;
 }

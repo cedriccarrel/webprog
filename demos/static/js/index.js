@@ -39,6 +39,7 @@ async function initializeTeamOne() {
                 console.log($(this))
                 let player_Id1 = $(this).data("id")
                 let player1_name = $(this).data("name")
+                let player1_position = $(this).data("position")
                 let player1_teamname = $(this).data("teamname")
                 let player1_conference = $(this).data("conference")
                 let player1_division = $(this).data("division")
@@ -57,7 +58,11 @@ async function initializeTeamOne() {
                 console.log(player1_conference)
                 console.log(player1_division)
                 console.log(url1)
-                $("#player_name").text(player1_name)
+                $("#player_name1").text(player1_name)
+                $("#team1").text(player1_teamname)
+                $("#conference1").text(player1_conference)
+                $("#division1").text(player1_division)
+                $("#position1").text(player1_position)
                 if(player1_stats_json.data.length > 0) {
                     Object.filter = (obj, predicate) => 
                     Object.fromEntries(Object.entries(obj).filter(predicate))
@@ -160,6 +165,7 @@ async function initializeTeamTwo() {
                 console.log($(this))
                 let player_Id2 = $(this).data("id")
                 let player2_name = $(this).data("name")
+                let player2_position = $(this).data("position")
                 let player2_teamname = $(this).data("teamname")
                 let player2_conference = $(this).data("conference")
                 let player2_division = $(this).data("division")
@@ -179,6 +185,10 @@ async function initializeTeamTwo() {
                 console.log(player2_division)
                 console.log(url2)
                 $("#player2_name").text(player2_name)
+                $("#team2").text(player2_teamname)
+                $("#position2").text(player2_position)
+                $("#conference2").text(player2_conference)
+                $("#division2").text(player2_division)
                 if(player2_stats_json.data.length > 0) {
                     Object.filter = (obj, predicate) => 
                     Object.fromEntries(Object.entries(obj).filter(predicate))

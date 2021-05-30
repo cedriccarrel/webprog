@@ -9,24 +9,17 @@ var player2_json;
 var myChart;
 var myChart2;
 
-
-
-/* Changes Flurin
-let seasonaveragesplayer1 = $("#stats_player1")
-let seasonaveragesplayer2 = $("#stats_player2")
-*/
-
 function clickedOnTeam (event) {
     console.log(event.target)
 }
-
+//Befüllung Dropdown Team 1
 async function initializeTeamOne() {
     teamsDropdown.empty()
     const teamsResponse = await fetch("/teams");
     const jsonData = await teamsResponse.json();
     const teamLinkElements = jsonData.data.map(team => `<a data-name="${team.full_name}" data-id=${team.id}>${team.full_name}</a> `);
     teamsDropdown.append(...teamLinkElements);
-
+//Befüllung Dropdown Player 1
     teamsDropdown.find('a').click(async function () {
         playersDropdown.empty()
         let teamId = $(this).data("id")
@@ -44,25 +37,16 @@ async function initializeTeamOne() {
                 let player1_conference = $(this).data("conference")
                 let player1_division = $(this).data("division")
                 let url1 = `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${player_Id1}`
+                //fetch Stats Player 1
                 let player1_stats_response = await fetch(url1)
                 let player1_stats_json = await player1_stats_response.json()
-                if (player1_stats_json.data.length > 0) {
-                    console.log(player1_stats_json.data)
-                }
-                else {
-                    console.log("This player was not active during the 2020/2021 season!")
-                }
-                console.log(player_Id1)
-                console.log(player1_name)
-                console.log(player1_teamname)
-                console.log(player1_conference)
-                console.log(player1_division)
-                console.log(url1)
+                //Textbefüllung HTML-divs Player 1
                 $("#player_name1").text(player1_name)
                 $("#team1").text(player1_teamname)
                 $("#conference1").text(player1_conference)
                 $("#division1").text(player1_division)
                 $("#position1").text(player1_position)
+                //Überprüfung geliefertes Array, um herauszufinden, ob Spieler aktiv war
                 if(player1_stats_json.data.length > 0) {
                     Object.filter = (obj, predicate) => 
                     Object.fromEntries(Object.entries(obj).filter(predicate))
@@ -81,7 +65,7 @@ async function initializeTeamOne() {
 }
 
 initializeTeamOne()
-
+//Aufbereitung Chart
 const labels = [
     'fgm',
     "fga",
@@ -117,7 +101,7 @@ const labelsCharts = [
     'Personal Fouls',
     'Points'
 ]
-
+// Befüllung Chart Player 1
 function drawChartPlayer1() {
     const data = {
         labels: labelsCharts,
@@ -145,14 +129,14 @@ function drawChartPlayer1() {
         config
     );
 }
-
+//Befüllung Dropdown Team 2
 async function initializeTeamTwo() {
     teamsDropdown2.empty()
     const teamsResponse = await fetch("/teams");
     const jsonData = await teamsResponse.json();
     const teamLinkElements = jsonData.data.map(team => `<a data-name="${team.full_name}" data-id=${team.id}>${team.full_name}</a> `);
     teamsDropdown2.append(...teamLinkElements);
-
+//Befüllung Dropdown Player 2
     teamsDropdown2.find('a').click(async function () {
         playersDropdown2.empty()
         let teamId = $(this).data("id")
@@ -170,25 +154,16 @@ async function initializeTeamTwo() {
                 let player2_conference = $(this).data("conference")
                 let player2_division = $(this).data("division")
                 let url2 = `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${player_Id2}`
+                //fetch Stats Player 2
                 let player2_stats_response = await fetch(url2)
                 let player2_stats_json = await player2_stats_response.json()
-                if (player2_stats_json.data.length > 0) {
-                    console.log(player2_stats_json.data)
-                }
-                    else {
-                        console.log("This player was not active during the 2020/2021 season!")
-                    }
-                console.log(player_Id2)
-                console.log(player2_name)
-                console.log(player2_teamname)
-                console.log(player2_conference)
-                console.log(player2_division)
-                console.log(url2)
+                //Textbefüllung HTML-divs Player 2
                 $("#player2_name").text(player2_name)
                 $("#team2").text(player2_teamname)
                 $("#position2").text(player2_position)
                 $("#conference2").text(player2_conference)
                 $("#division2").text(player2_division)
+                //Überprüfung geliefertes Array, um herauszufinden, ob Spieler aktiv war
                 if(player2_stats_json.data.length > 0) {
                     Object.filter = (obj, predicate) => 
                     Object.fromEntries(Object.entries(obj).filter(predicate))
@@ -207,7 +182,7 @@ async function initializeTeamTwo() {
 }
 
 initializeTeamTwo()
-
+// Befüllung Chart Player 2
 function drawChartPlayer2() {
     const data = {
         labels: labelsCharts,
